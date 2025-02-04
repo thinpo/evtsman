@@ -21,7 +21,13 @@ function ManageDropdowns() {
   const fetchDropdowns = async () => {
     try {
       const res = await axios.get('http://localhost:5001/dropdowns');
-      setDropdowns(res.data);
+      // Transform the response data to extract just the values
+      const transformedData = {
+        origin_country: res.data.origin_country.map(item => item.value),
+        relevant_exchange: res.data.relevant_exchange.map(item => item.value),
+        event_type: res.data.event_type.map(item => item.value)
+      };
+      setDropdowns(transformedData);
     } catch (error) {
       console.error('Error fetching dropdowns:', error);
     }
@@ -67,7 +73,7 @@ function ManageDropdowns() {
     // Update backend
     try {
       await axios.put(`http://localhost:5001/dropdowns/${key}/reorder`, {
-        values: items
+        values: items.map(value => ({ value, order_index: items.indexOf(value) }))
       });
     } catch (error) {
       console.error('Error reordering items:', error);
