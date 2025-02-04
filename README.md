@@ -1,165 +1,123 @@
 # Events Management System
 
-A web application for tracking and managing global business events, mergers, acquisitions, and market activities across different countries and exchanges.
+A full-stack web application for managing events and related data with multiple backend implementations.
+
+## Project Structure
+
+```
+.
+├── frontend/               # React frontend application
+├── backend-node/          # Node.js (Express) implementation
+├── backend-python/        # Python (Flask) implementation
+└── backend-go/           # Go (Gin) implementation
+```
 
 ## Features
 
-- **Event Management**
-  - Add, edit, and delete events
-  - Track events with detailed information:
-    - Date and Month
-    - Origin and Impact Countries
-    - Relevant Exchange
-    - Event Type (Merger, Acquisition, IPO, etc.)
-    - Event Details
-    - Input Tracking (Who/When)
+- Full CRUD operations for events and entries
+- Dropdown management system with drag-and-drop reordering
+- Multiple storage options (SQLite, PostgreSQL)
+- Error boundary handling for graceful error recovery
+- Responsive and modern UI
+- API documentation
+- Environment-based configuration
+- Automatic port selection
+- Graceful shutdown handling
 
-- **Data Organization**
-  - Dropdown selections for standardized input
-  - Support for multiple exchanges (NYSE, NASDAQ, LSE, etc.)
-  - Country-based event tracking
-  - Event type categorization
+## Frontend (React)
 
-- **Flexible Storage**
-  - Supports CSV, PostgreSQL, and SQLite storage
-  - Easy switching between storage types
-  - Automatic data persistence
+The frontend is built with React and includes:
 
-## Technology Stack
+- Modern UI with responsive design
+- Drag-and-drop functionality for reordering lists
+- Error boundary for graceful error handling
+- Dynamic form validation
+- Real-time updates
+- Comprehensive error handling
 
-- **Frontend**
-  - React.js
-  - Axios for API calls
-  - Modern UI with responsive design
+### Running the Frontend
 
-- **Backend**
-  - Node.js
-  - Express.js
-  - CSV file handling
-  - PostgreSQL database support
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- PostgreSQL (optional, if using PostgreSQL storage)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone [repository-url]
-   ```
-
-2. Install backend dependencies:
-   ```bash
-   cd backend
-   npm install
-   ```
-
-3. Install frontend dependencies:
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-
-### Configuration
-
-1. Backend configuration (`backend/config.js`):
-   - Set storage type (CSV, PostgreSQL, or SQLite)
-   - Configure database connection (if using PostgreSQL)
-   - Configure SQLite database path (if using SQLite)
-   - Adjust CSV file paths if needed
-
-2. Environment variables:
-   ```env
-   # For PostgreSQL
-   DB_HOST=localhost
-   DB_PORT=5432
-   DB_NAME=events_db
-   DB_USER=postgres
-   DB_PASSWORD=postgres
-
-   # For SQLite
-   SQLITE_FILE=./data/events.db
-
-   # Storage Type (csv, postgres, or sqlite)
-   STORAGE_TYPE=csv
-   ```
-
-### Running the Application
-
-1. Start the backend server:
-   ```bash
-   cd backend
-   npm start
-   ```
-   The server will run on port 5001 by default.
-
-2. Start the frontend development server:
-   ```bash
-   cd frontend
-   npm start
-   ```
-   The application will open in your browser at http://localhost:3000
-
-### Test Data
-
-The project includes a script to generate test data:
 ```bash
-cd backend
-node test-data.js
+cd frontend
+npm install
+npm start
 ```
-This will populate the system with sample events covering various scenarios.
 
-## API Endpoints
+The application will be available at `http://localhost:3000`.
 
-- `GET /entries` - Retrieve all entries
-- `POST /entries` - Create a new entry
-- `PUT /entries/:id` - Update an existing entry
-- `DELETE /entries/:id` - Delete an entry
-- `GET /dropdowns` - Get all dropdown options
-- `POST /dropdowns/:key` - Add a new dropdown value
-- `DELETE /dropdowns/:key` - Remove a dropdown value
+## Backend Implementations
+
+All backend implementations provide identical API endpoints and functionality:
+
+### API Endpoints
+
+- `GET /` - API documentation
+- `GET /entries` - List all entries
+- `POST /entries` - Create new entry
+- `PUT /entries/:id` - Update entry
+- `DELETE /entries/:id` - Delete entry
+- `GET /dropdowns` - Get all dropdown values
+- `POST /dropdowns/:key` - Add new dropdown value
+- `DELETE /dropdowns/:key` - Delete dropdown value
 - `PUT /dropdowns/:key/reorder` - Reorder dropdown values
+- `GET /events` - List all events
+- `POST /events` - Create new event
+
+Choose any of the backend implementations based on your preference:
+
+1. [Node.js (Express)](./backend-node/README.md)
+2. [Python (Flask)](./backend-python/README.md)
+3. [Go (Gin)](./backend-go/README.md)
 
 ## Data Structure
 
-### Event Entry
-```javascript
-{
-  date: "YYYY-MM-DD",
-  month: "Month Name",
-  origin_country: "Country Name",
-  main_impact_country: "Country Name",
-  relevant_exchange: "Exchange Name",
-  event_type: "Event Type",
-  who_input: "User Name",
-  when_input: "YYYY-MM-DDTHH:mm:ss",
-  details: "Event Description"
-}
+### Entries
+- ID
+- Date
+- Month
+- Origin Country
+- Main Impact Country
+- Relevant Exchange
+- Event Type
+- Who Input
+- When Input
+- Details
+
+### Dropdowns
+- Countries
+- Exchanges
+- Event Types
+
+Each dropdown item contains:
+- Value
+- Order Index
+
+## Configuration
+
+All backends support configuration through environment variables:
+
+- `STORAGE_TYPE` - "sqlite" or "postgres"
+- `DB_HOST` - PostgreSQL host
+- `DB_PORT` - PostgreSQL port
+- `DB_NAME` - Database name
+- `DB_USER` - Database user
+- `DB_PASSWORD` - Database password
+- `SQLITE_FILE` - SQLite database file path
+
+## Development
+
+1. Clone the repository:
+```bash
+git clone https://github.com/thinpo/evtsman.git
+cd evtsman
 ```
 
-### CSV Format
-The CSV storage uses the following columns:
-```csv
-id,date,month,origin_country,main_impact_country,relevant_exchange,event_type,who_input,when_input,details
-```
-
-Example:
-```csv
-1,2024-02-15,February,USA,China,NYSE,Market Expansion,Test User,2024-02-15T10:30:00,Event description
-```
+2. Start the frontend and any backend of your choice following their respective README instructions.
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request 
