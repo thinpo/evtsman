@@ -1,0 +1,7 @@
+value,order_index
+NYSE,0
+NASDAQ,1
+LSE,2
+TSE,3
+SSE,4
+HKEX,5

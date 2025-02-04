@@ -1,0 +1,9 @@
+id,date,month,origin_country,main_impact_country,relevant_exchange,event_type,who_input,when_input,details
+1,2024-02-15,February,USA,China,NYSE,Market Expansion,Test User,2024-02-15T10:30:00,Major US tech company announces significant expansion into Chinese market, establishing new R&D centers in Shanghai and Beijing.
+2,2024-01-20,January,Japan,USA,TSE,Merger,Test User,2024-01-20T14:15:00,Japanese automotive giant merges with US electric vehicle startup to accelerate EV development and market presence.
+3,2024-03-05,March,Germany,UK,LSE,Acquisition,Test User,2024-03-05T09:45:00,German industrial conglomerate acquires British renewable energy company for €2.5 billion.
+4,2024-02-28,February,China,India,HKEX,IPO,Test User,2024-02-28T11:20:00,Major Chinese e-commerce platform specializing in India-China trade launches IPO on HKEX.
+5,2024-01-10,January,USA,USA,NASDAQ,Regulatory Action,Test User,2024-01-10T16:00:00,SEC announces new cybersecurity disclosure requirements for publicly traded companies.
+6,2024-03-01,March,UK,Germany,LSE,Restructuring,Test User,2024-03-01T13:30:00,British multinational bank announces major restructuring, affecting operations in Germany and other EU countries.
+7,2024-02-01,February,India,Japan,TSE,Management Change,Test User,2024-02-01T08:15:00,Indian tech services giant appoints new CEO with extensive experience in Japanese market.
+8,2024-01-15,January,Russia,Brazil,NYSE,Market Expansion,Test User,2024-01-15T12:45:00,Russian agricultural company expands operations to Brazil, announcing major investment in local infrastructure.

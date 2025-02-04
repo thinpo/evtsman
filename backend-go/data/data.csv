@@ -1,0 +1,2 @@
+id,date,month,origin_country,main_impact_country,relevant_exchange,event_type,who_input,when_input,details
+1,2023-10-10,October,USA,UK,NASDAQ,Conference,John Doe,2023-10-10T10:00:00Z,Sample event details

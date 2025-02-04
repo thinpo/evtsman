@@ -1,0 +1,9 @@
+value,order_index
+Merger,0
+Acquisition,1
+IPO,2
+Bankruptcy,3
+Restructuring,4
+Management Change,5
+Regulatory Action,6
+Market Expansion,7
