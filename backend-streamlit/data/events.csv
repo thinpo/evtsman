@@ -1,0 +1,11 @@
+id,event_name,event_type,origin_country,main_impact_country,relevant_exchange,month,year,description,created_at
+1,Global Tech Summit,Conference,USA,USA,NASDAQ,June,2024,Annual technology conference focusing on AI and ML,2024-01-01T00:00:00Z
+2,European Finance Workshop,Workshop,UK,Germany,LSE,March,2024,Workshop on financial markets and trading strategies,2024-01-01T00:00:00Z
+3,Asia Trade Expo 11,Exhibition,Japan,China,JPX,September,2024,Major trade exhibition for Asian markets,2024-01-01T00:00:00Z
+4,Investment Strategies Webinar,Webinar,Canada,USA,TSX,April,2024,Online session about investment opportunities,2024-01-01T00:00:00Z
+5,Blockchain Summit,Summit,Germany,France,NYSE,July,2024,Discussion on blockchain technology and cryptocurrencies,2024-01-01T00:00:00Z
+6,Startup Meetup,Meetup,Australia,India,ASX,May,2024,Networking event for startup founders and investors,2024-01-01T00:00:00Z
+7,Market Analysis Forum,Forum,China,Japan,SSE,October,2024,Analysis of market trends and opportunities,2024-01-01T00:00:00Z
+8,Innovation Symposium,Symposium,Brazil,USA,B3,August,2024,Exploring technological innovations in finance,2024-01-01T00:00:00Z
+9,Trading Strategies Seminar,Seminar,India,UK,NSE,November,2024,Advanced trading techniques and market analysis,2024-01-01T00:00:00Z
+10,Global Markets Show,Trade Show,France,Germany,HKEX,December,2024,International trade show for global markets,2024-01-01T00:00:00Z 

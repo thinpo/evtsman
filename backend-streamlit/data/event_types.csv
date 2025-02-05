@@ -1,0 +1,11 @@
+value,order_index
+Conference,0
+Workshop,1
+Webinar,2
+Meetup,3
+Trade Show,4
+Summit,5
+Symposium,6
+Exhibition,7
+Forum,8
+Seminar,9 
