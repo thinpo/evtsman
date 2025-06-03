@@ -42,7 +42,15 @@ async function writeCSV(filePath, dataArray) {
       return;
     }
     const header = 'value,order_index\n';
-    const rows = dataArray.map((obj, index) => `${obj.value},${obj.order_index || index}`).join('\n');
+    const rows = dataArray
+      .map((obj, index) => {
+        const orderIndex =
+          obj.order_index !== undefined && obj.order_index !== null
+            ? obj.order_index
+            : index;
+        return `${obj.value},${orderIndex}`;
+      })
+      .join('\n');
     await fs.writeFile(filePath, header + rows);
   } catch (err) {
     throw new Error(`Failed to write CSV file: ${err.message}`);
