@@ -163,4 +163,13 @@ python run.py
 Run the tests with:
 ```bash
 python -m pytest
-``` 
+```
+
+## Star Position Calculator
+
+The `star_position_calculator.py` module can compute the apparent altitude and
+azimuth of a star for a given location and time:
+
+```bash
+python star_position_calculator.py 101.2875 -16.7161 51.5 0 --datetime 2024-01-01T00:00:00
+```
